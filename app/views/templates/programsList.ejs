@@ -1,0 +1,5 @@
+<ol id=programsList class="list">
+  <% _.each(programs, function(program) { %>
+  <li><a href="#programs/<%= program.id %>"><%= program.name %></a>
+  <% }); %>
+</ol>

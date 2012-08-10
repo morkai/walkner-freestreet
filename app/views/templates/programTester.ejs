@@ -1,0 +1,13 @@
+<form id="programTesterForm" class="form" method="post" action="/testers/<%= id %>">
+  <fieldset>
+    <legend><%= name %></legend>
+    <ul class="form-fields">
+      <li>
+        <label for="programTesterFormProgram1">Program 1:</label>
+        <%= selectTag('programTesterFormProgram1', 'program1', program1, programs) %>
+      <li>
+        <label for="programTesterFormProgram2">Program 2:</label>
+        <%= selectTag('programTesterFormProgram2', 'program2', program2, programs) %>
+    </ul>
+  </fieldset>
+</form>

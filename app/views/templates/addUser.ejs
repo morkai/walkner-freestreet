@@ -1,0 +1,22 @@
+<form id="addUserForm" class="form" method="post" action="/users">
+  <fieldset>
+    <legend>Podstawowe informacje</legend>
+    <ul class="form-fields">
+      <li>
+        <label for="addUserFormName">Imię i nazwisko:</label>
+        <input id="addUserFormName" name="name" type="text">
+      <li>
+        <label for="addUserFormRole">Rola:</label>
+        <%= selectTag('addUserFormRole', 'role', 'user', roles) %>
+      <li>
+        <label for="addUserFormEmail">Adres e-mail:</label>
+        <input id="addUserFormEmail" name="email" type="text">
+      <li>
+        <label for="addUserFormPassword1">Hasło:</label>
+        <input id="addUserFormPassword1" name="password1" type="password">
+      <li>
+        <label for="addUserFormPassword2">Powtórz hasło:</label>
+        <input id="addUserFormPassword2" name="password2" type="password">
+    </ul>
+  </fieldset>
+</form>

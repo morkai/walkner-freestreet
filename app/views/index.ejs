@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>Tester opraw LED</title>
+    <link rel=stylesheet href="app.css">
+  </head>
+  <body>
+    <div id=overlay>
+      <img src="loading.gif" width=16 height=16 alt="Proszę czekać...">
+    </div>
+    <div id=hd>
+      <ul class="buttons left"></ul>
+      <ul class="buttons right"></ul>
+      <h1>Tester opraw LED</h1>
+    </div>
+    <div id=bd></div>
+
+    <script src="/lib/vendor.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="/app/models/Tester.js"></script>
+    <script src="/app/models/Testers.js"></script>
+    <script src="/app/models/Program.js"></script>
+    <script src="/app/models/Programs.js"></script>
+    <script src="/app/models/User.js"></script>
+    <script src="/app/models/Users.js"></script>
+    <script src="/app/models/Test.js"></script>
+    <script src="/app/models/Tests.js"></script>
+
+    <script src="/app/views/HeaderView.js"></script>
+    <script src="/app/views/BodyView.js"></script>
+    <script src="/app/views/NotFoundView.js"></script>
+    <script src="/app/views/HomeView.js"></script>
+    <script src="/app/views/LoginView.js"></script>
+
+    <script src="/app/views/TestersListView.js"></script>
+    <script src="/app/views/TesterDetailsView.js"></script>
+    <script src="/app/views/AddTesterView.js"></script>
+    <script src="/app/views/EditTesterView.js"></script>
+    <script src="/app/views/ProgramTesterView.js"></script>
+
+    <script src="/app/views/ProgramsListView.js"></script>
+    <script src="/app/views/ProgramDetailsView.js"></script>
+    <script src="/app/views/AddProgramView.js"></script>
+    <script src="/app/views/EditProgramView.js"></script>
+
+    <script src="/app/views/UsersListView.js"></script>
+    <script src="/app/views/UserDetailsView.js"></script>
+    <script src="/app/views/AddUserView.js"></script>
+    <script src="/app/views/EditUserView.js"></script>
+
+    <script src="/app/views/TestsListView.js"></script>
+    <script src="/app/views/TestDetailsView.js"></script>
+
+    <script src="/app/controllers/HomeController.js"></script>
+    <script src="/app/controllers/TestersController.js"></script>
+    <script src="/app/controllers/ProgramsController.js"></script>
+    <script src="/app/controllers/UsersController.js"></script>
+    <script src="/app/controllers/TestsController.js"></script>
+
+    <script src="/app/app.js"></script>
+
+    <script src="/lib/operations.js"></script>
+    <script src="/lib/ProgramPlotter.js"></script>
+    <script src="/lib/ProgramEditor.js"></script>
+    <script src="/lib/ProgramAnimator.js"></script>
+
+    <script>
+    $(function()
+    {
+      boot({
+        testerModels: {{- JSON.stringify(testerModels) }},
+        testers: {{- JSON.stringify(testers) }},
+        programs: {{- JSON.stringify(programs) }},
+        users: {{- JSON.stringify(users) }},
+        user: {{- JSON.stringify(user ? user : null) }}
+      });
+    });
+    </script>
+    {{- partial('template', templates) }}
+  </body>
+</html>

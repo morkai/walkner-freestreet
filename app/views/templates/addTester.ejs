@@ -1,0 +1,72 @@
+<form id="addTesterForm" class="form" method="post" action="/testers">
+  <fieldset>
+    <legend>Podstawowe informacje</legend>
+    <ul class="form-fields">
+      <li>
+        <label for="addTesterFormName">Nazwa:</label>
+        <input id="addTesterFormName" name="name" type="text">
+      <li>
+        <label for="addTesterFormModel">Model:</label>
+        <%= selectTag('addTesterFormModel', 'model', null, testerModels) %>
+      <li>
+        <label for="addTesterFormUnit">ID jednostki:</label>
+        <input id="addTesterFormUnit" name="unit" type="number" min="0" max="254" value="0">
+      <li>
+        <label for="addTesterFormType">Typ połączenia:</label>
+        <select id="addTesterFormType" name="type">
+          <option value="tcp" selected>TCP
+          <option value="ascii">ASCII
+          <option value="rtu">RTU
+        </select>
+    </ul>
+  </fieldset>
+  <fieldset id="addTesterFormTcpConnection">
+    <legend>Konfiguracja połączenia</legend>
+    <ul class="form-fields">
+      <li>
+        <label for="addTesterFormHost">Host:</label>
+        <input id="addTesterFormHost" name="host" type="text" value="127.0.0.1">
+      <li>
+        <label for="addTesterFormPort">Port:</label>
+        <input id="addTesterFormPort" name="port" type="number" step="1" min="80" max="65535" value="502">
+    </ul>
+  </fieldset>
+  <fieldset id="addTesterFormSerialConnection">
+    <legend>Konfiguracja połączenia</legend>
+    <ul class="form-fields">
+      <li>
+        <label for="addTesterFormPath">Port:</label>
+        <input id="addTesterFormPath" name="path" type="text" value="/dev/ttyS0">
+      <li>
+        <label for="addTesterFormBaudRate">Prędkość transmisji:</label>
+        <select id="addTesterFormBaudRate" name="baudRate">
+          <option value="9600" selected>9600
+          <option value="19200">19200
+          <option value="38400">38400
+          <option value="57600">57600
+          <option value="115200">115200
+        </select>
+      <li>
+        <label for="addTesterFormDataBits">Bity danych:</label>
+        <select id="addTesterFormDataBits" name="dataBits">
+          <option value="5">5
+          <option value="6">6
+          <option value="7" selected>7
+          <option value="8">8
+        </select>
+      <li>
+        <label for="addTesterFormStopBits">Bity stopu:</label>
+        <select id="addTesterFormStopBits" name="stopBits">
+          <option value="1" selected>1
+          <option value="2">2
+        </select>
+      <li>
+        <label for="addTesterFormParity">Kontrola parzystości:</label>
+        <select id="addTesterFormPairty" name="parity">
+          <option value="0">Brak
+          <option value="1">Bity nieparzyste
+          <option value="2" selected>Bity parzyste
+        </select>
+    </ul>
+  </fieldset>
+</form>

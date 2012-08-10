@@ -1,0 +1,515 @@
+body
+{
+  background: #EEE;
+  color: #444;
+  cursor: default;
+  font: 1em/1 Arial, sans-serif;
+  margin: 3.5em 0 0 0;
+}
+a {
+  color: #06C;
+}
+#overlay {
+  background: rgba(0, 0, 0, .85);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+#overlay img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+}
+#hd {
+  background: linear-gradient(top, #FFF, #E1E1E1);
+  background: -moz-linear-gradient(top, #FFF, #E1E1E1);
+  background: -o-linear-gradient(top, #FFF, #E1E1E1);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#E1E1E1));
+  border-bottom: 1px solid #D4D4D4;
+  height: 3.5em;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+#hd h1 {
+  font-size: 2em;
+  line-height: 1.75em;
+  margin: 0;
+  text-align: center;
+  text-shadow: 1px 1px 1px white;
+  text-transform: uppercase;
+}
+#bd {
+  margin-top: 3.5em;
+}
+.list {
+  background: #FFF;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list li {
+  margin: 0;
+  padding: 0;
+}
+.list a {
+  border-bottom: 1px solid #D4D4D4;
+  display: block;
+  font-size: 1.5em;
+  margin: 0;
+  padding: .5em;
+  text-decoration: none;
+}
+.list a:hover {
+  background: #F93;
+  color: #FFF;
+}
+.list a:active,
+.list a.active {
+  background: #39F;
+  color: #FFF;
+  outline: 0;
+}
+.buttons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.buttons li {
+  display: inline-block;
+  margin-left: .5em;
+}
+.buttons.right li {
+  margin-left: 0;
+  margin-right: .5em;
+}
+#hd .buttons {
+  margin-top: .75em;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.button,
+.button:disabled:active,
+.button.active:disabled {
+  background: linear-gradient(top, #FFF, #CCC);
+  background: -moz-linear-gradient(top, #FFF, #CCC);
+  background: -o-linear-gradient(top, #FFF, #CCC);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#CCC));
+  border: 1px solid #AAA;
+  border-top-color: #CCC;
+  border-left-color: #CCC;
+  border-radius: .25em;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  line-height: 1;
+  margin: 0;
+  padding: .25em .5em;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px white;
+}
+.button:active,
+.button.active {
+  background: linear-gradient(top, #CCC, #FFF);
+  background: -moz-linear-gradient(top, #CCC, #FFF);
+  background: -o-linear-gradient(top, #CCC, #FFF);
+  background: -webkit-gradient(linear, left top, left bottom, from(#CCC), to(#FFF));
+  border: 1px solid #CCC;
+  border-top-color: #AAA;
+  border-left-color: #AAA;
+  text-shadow: -1px -1px 1px #FFF;
+}
+.button:disabled {
+  color: #AAA!important;
+}
+#hd .button {
+  font-size: 1.25em;
+}
+.form {
+  padding: .5em;
+  font-size: 1.25em;
+}
+.form fieldset {
+  border: 0;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+.form legend {
+  font-size: 1.25em;
+  padding: 0 0 .5em 0;
+}
+.form-fields {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.form-fields input,
+.form-fields select,
+.form-fields textarea {
+  border: 0;
+  background: #FFF;
+  display: table-cell;
+  font-size: 1.25em;
+  margin: 0;
+  padding: .5em .25em;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.form-fields select {
+  background: #FFF;
+  -webkit-appearance: none;
+  background-image: url(data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%0E%00%00%00%07%08%03%00%00%00%0F%99%8C%2B%00%00%00%01sRGB%00%AE%CE%1C%E9%00%00%00%04gAMA%00%00%B1%8F%0B%FCa%05%00%00%03%00PLTE%DD%DD%DD%EA%EA%EA%F3%F3%F3%FF%FF%FF%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00D%A8H%DB%00%00%00%09pHYs%00%00%0E%C3%00%00%0E%C3%01%C7o%A8d%00%00%00%19tEXtSoftware%00Paint.NET%20v3.5.87%3B%80%5D%00%00%00*IDAT%18WM%C7%C1%11%000%08%020%90%FDwn%11%7B5%BF%A0%B0%10Z%A7%A0%7F%CA%7D%BF%EB%E6%5E%EA%F7%A6%AAL%07%14%CF%00%94%EC%B4%82K%00%00%00%00IEND%AEB%60%8);
+  background-position: 99% center;
+  background-repeat: no-repeat;
+}
+.form-fields > li {
+  display: table;
+  width: 100%;
+  border: 1px solid #DDD;
+  border-top: 0;
+}
+.form-fields > li:first-child {
+  border-top: 1px solid #DDD;
+}
+.form-fields label {
+  background: #F7F7F7;
+  border: 1px solid #FFF;
+  display: table-cell;
+  width: 30%;
+  padding: 0 .5em;
+}
+
+.details {
+  list-style: none;
+  margin: 4.2em .5em .5em .5em;
+  padding: 0;
+}
+.details .value {
+  border: 0;
+  background: #FFF;
+  display: table-cell;
+  font-size: 1.25em;
+  margin: 0;
+  padding: .5em .25em;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.details > li {
+  display: table;
+  width: 100%;
+  border: 1px solid #DDD;
+  border-top: 0;
+}
+.details > li:first-child {
+  border-top: 1px solid #DDD;
+}
+.details .property {
+  background: #F7F7F7;
+  border: 1px solid #FFF;
+  display: table-cell;
+  width: 30%;
+  padding: 0 .5em;
+}
+
+/**
+ * testers list
+ */
+#testersList .status {
+  background: #666;
+  background: radial-gradient(center 45deg, circle closest-side, #CCC 0%, #666 100%);
+  background: -moz-radial-gradient(center 45deg, circle closest-side, #CCC 0%, #666 100%);
+  background: -o-radial-gradient(center 45deg, circle closest-side, #CCC 0%, #666 100%);
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 10, from(#CCC), to(#666));
+  border: 2px solid #333;
+  border-radius: 2em;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+#testersList .ok {
+  background: green;
+  background: radial-gradient(center 45deg, circle closest-side, #EAF7D9 0%, green 100%);
+  background: -moz-radial-gradient(center 45deg, circle closest-side, #EAF7D9 0%, green 100%);
+  background: -o-radial-gradient(center 45deg, circle closest-side, #EAF7D9 0%, green 100%);
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 10, from(#EAF7D9), to(green));
+}
+#testersList .warning {
+  background: orange;
+  background: radial-gradient(center 45deg, circle closest-side, #FFF5CC 0%, orange 100%);
+  background: -moz-radial-gradient(center 45deg, circle closest-side, #FFF5CC 0%, orange 100%);
+  background: -o-radial-gradient(center 45deg, circle closest-side, #FFF5CC 0%, orange 100%);
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 10, from(#FFF5CC), to(orange));
+}
+#testersList .error {
+  background: red;
+  background: radial-gradient(center 45deg, circle closest-side, #FFD1D1 0%, red 100%);
+  background: -moz-radial-gradient(center 45deg, circle closest-side, #FFD1D1 0%, red 100%);
+  background: -o-radial-gradient(center 45deg, circle closest-side, #FFD1D1 0%, red 100%);
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 10, from(#FFD1D1), to(red));
+}
+
+/**
+ * tester details
+ */
+#previewGraph,
+#previewAnim {
+  background: #FFF;
+  display: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border: 2px solid #333;
+  border-radius: .5em;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: .5em;
+}
+#previewAnim {
+  background: transparent;
+}
+#leds {
+  border-radius: .5em;
+  display: table;
+  padding: .5em .5em 0 .5em;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.led {
+  border: 2px solid #333;
+  display: table-cell;
+  height: 3em;
+  width: 33.33%;
+}
+.led.off {
+  background: #666!important;
+}
+#greenLed {
+  background: green;
+  background: radial-gradient(50% 50%, circle farthest-side, #EAF7D9, green);
+  background: -moz-radial-gradient(50% 50%, circle farthest-side, #EAF7D9, green);
+  background: -o-radial-gradient(50% 50%, circle farthest-side, #EAF7D9, green);
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(#EAF7D9), to(green));
+  background: -webkit-radial-gradient(50% 50%, circle farthest-side, #EAF7D9, green);
+  border-top-left-radius: .35em;
+  border-bottom-left-radius: .35em;
+}
+#orangeLed {
+  border-left: none;
+  border-right: none;
+  background: orange;
+  background: radial-gradient(50% 50%, circle farthest-side, #FFF5CC, orange);
+  background: -moz-radial-gradient(50% 50%, circle farthest-side, #FFF5CC, orange);
+  background: -o-radial-gradient(50% 50%, circle farthest-side, #FFF5CC, orange);
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(#FFF5CC), to(orange));
+  background: -webkit-radial-gradient(50% 50%, circle farthest-side, #FFF5CC, orange);
+}
+#redLed {
+  background: red;
+  background: radial-gradient(50% 50%, circle farthest-side, #FFD1D1, red);
+  background: -moz-radial-gradient(50% 50%, circle farthest-side, #FFD1D1, red);
+  background: -o-radial-gradient(50% 50%, circle farthest-side, #FFD1D1, red);
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(#FFD1D1), to(red));
+  background: -webkit-radial-gradient(50% 50%, circle farthest-side, #FFD1D1, red);
+  border-top-right-radius: .35em;
+  border-bottom-right-radius: .35em;
+}
+#programs {
+  font-size: 1.5em;
+  padding: .5em;
+}
+#programs p {
+  margin: 0;
+}
+#chosenProgram {
+  font-weight: bold;
+}
+#currentValues {
+  font-size: .5em;
+  float: right;
+  text-align: right;
+  display: none;
+}
+
+/**
+ * 404
+ */
+#notFound {
+  padding: .5em;
+}
+#notFound p {
+  background: #FFF;
+  margin: 0;
+  padding: .5em;
+}
+
+/**
+ * program details
+ */
+#programDetailsFormats {
+  border: 0;
+  padding: .5em;
+  margin: 0 auto;
+  text-align: center;
+}
+#programDetailsFormats button {
+  display: inline;
+  font: inherit;
+  width: 7em;
+}
+#programTextBtn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#programCodeBtn {
+  border-left-color: #FFF;
+  border-radius: 0;
+}
+#programGraphBtn {
+  border-left-color: #FFF;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#programText,
+#programCode,
+#programGraph {
+  margin: 0 .5em .5em .5em;
+  padding: .3em .5em;
+  border: 1px solid #CCC;
+  border-radius: .25em;
+  background: #FFF;
+  display: none;
+}
+#programText {
+  display: block;
+}
+#programText,
+#programCode {
+  white-space: pre;
+  line-height: 1.4;
+}
+#programCode {
+  font-family: "Envy Code R", monospace;
+}
+#programGraph {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/**
+ * program edit
+ */
+#programOperationsPanel {
+  width: 28%;
+  position: fixed;
+}
+#programSourcePanel {
+  margin-left: 30%;
+  width: 70%;
+  margin-bottom: 0;
+}
+#programEditor .operations {
+  font-size: .8em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#programEditor .operations li {
+  margin-bottom: .5em;
+  border: 1px solid #DDD;
+}
+#programEditor .operations .operation {
+  background: #F7F7F7;
+  border: 1px solid #FFF;
+  padding: .5em;
+}
+#programEditor .operations li:hover {
+  border-color: #F93;
+  outline: 1px solid #F93;
+}
+#programEditor .source {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: .8em;
+  min-height: 5em;
+  background: #FFF;
+  border: 1px solid #DDD;
+  position: relative;
+}
+#programEditor input {
+  font: inherit;
+  color: inherit;
+}
+#programEditor input[type="number"] {
+  width: 4em;
+}
+#programEditor .source ol {
+  list-style: none;
+  margin: .5em 0 0 0;
+  padding: 0;
+}
+#programEditor .source ol:empty {
+  display: none;
+}
+#programEditor .source li {
+  margin: .5em;
+}
+#programEditor .source ol li {
+  margin: .5em 0 0 0;
+}
+#programEditor .source ol li:first-child {
+  margin-top: 0;
+}
+.op {
+  position: relative;
+  display: inline-block;
+  background: #FFF;
+  border: 1px solid #DDD;
+  padding: .5em;
+}
+.helper {
+  white-space: nowrap;
+  opacity: .8;
+}
+.currentTarget {
+  border-color: #F93!important;
+  outline: 1px solid #F93;
+}
+.acceptableTarget {
+  border-color: #39F!important;
+  outline: 1px solid #39F;
+}
+.validTarget {
+  border-color: #0C6!important;
+  outline: 1px solid #0C6;
+}
+.removeOperation {
+  position: absolute;
+  right: 2px;
+  top: 0;
+  margin: -3px 0 0 0;
+  padding: 0;
+  line-height: .8;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+#previewGraph.detached {
+  position: static;
+}

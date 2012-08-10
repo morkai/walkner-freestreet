@@ -1,0 +1,11 @@
+<ol id=menuList class="list">
+  <li><a href="#tests">Testy</a>
+  <li><a href="#testers">Testery</a>
+  <% if (hasAccessTo('programs')) { %>
+  <li><a href="#programs">Programy</a>
+  <% } %>
+  <% if (hasAccessTo('users')) { %>
+  <li><a href="#users">Użytkownicy</a>
+  <% } %>
+  <li>
+</ol>

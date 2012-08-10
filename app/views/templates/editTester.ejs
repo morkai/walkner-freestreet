@@ -1,0 +1,50 @@
+<form id="editTesterForm" class="form" method="post" action="/testers/<%= id %>">
+  <fieldset>
+    <legend>Podstawowe informacje</legend>
+    <ul class="form-fields">
+      <li>
+        <label for="editTesterFormName">Nazwa:</label>
+        <input id="editTesterFormName" name="name" type="text" value="<%= name %>">
+      <li>
+        <label for="addTesterFormModel">Model:</label>
+        <%= selectTag('addTesterFormModel', 'model', model, testerModels) %>
+      <li>
+        <label for="addTesterFormUnit">ID jednostki:</label>
+        <input id="addTesterFormUnit" name="unit" type="number" min="0" max="254" value="<%= unit %>">
+      <li>
+        <label for="editTesterFormType">Typ:</label>
+        <%= selectTag('editTesterFormType', 'type', type, {tcp: 'TCP', ascii: 'ASCII', rtu: 'RTU'}) %>
+    </ul>
+  </fieldset>
+  <fieldset id="editTesterFormTcpConnection">
+    <legend>Konfiguracja połączenia</legend>
+    <ul class="form-fields">
+      <li>
+        <label for="editTesterFormHost">Host:</label>
+        <input id="editTesterFormHost" name="host" type="text" value="<%= host %>">
+      <li>
+        <label for="editTesterFormPort">Port:</label>
+        <input id="editTesterFormPort" name="port" type="number" step="1" min="80" max="65535" value="<%= port %>">
+    </ul>
+  </fieldset>
+  <fieldset id="editTesterFormSerialConnection">
+    <legend>Konfiguracja połączenia</legend>
+    <ul class="form-fields">
+      <li>
+        <label for="editTesterFormPath">Port:</label>
+        <input id="editTesterFormPath" name="path" type="text" value="<%= path %>">
+      <li>
+        <label for="editTesterFormBaudRate">Prędkość transmisji:</label>
+        <%= selectTag('editTesterFormBaudRate', 'baudRate', baudRate, [9600, 19200, 38400, 57600, 115200]) %>
+      <li>
+        <label for="editTesterFormDataBits">Bity danych:</label>
+        <%= selectTag('editTesterFormDataBits', 'dataBits', dataBits, [5, 6, 7, 8]) %>
+      <li>
+        <label for="editTesterFormStopBits">Bity stopu:</label>
+        <%= selectTag('editTesterFormStopBits', 'stopBits', dataBits, [1, 2]) %>
+      <li>
+        <label for="editTesterFormParity">Kontrola parzystości:</label>
+        <%= selectTag('editTesterFormPairty', 'parity', dataBits, {0: 'Brak', 1: 'Bity nieparzyste', 2: 'Bity parzyste'}) %>
+    </ul>
+  </fieldset>
+</form>

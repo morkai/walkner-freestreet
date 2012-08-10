@@ -1,0 +1,21 @@
+#!/bin/sh
+
+SCRIPT=`readlink -f $0`
+SCRIPTPATH=`dirname $SCRIPT`
+BASEPATH=`dirname $SCRIPTPATH`
+DATETIME=`date +"%Y%m%d%H%M%S"`
+LOGPATH_MONGO="$BASEPATH/logs/mongo-$DATETIME.log"
+LOGPATH_SERVER="$BASEPATH/logs/server-$DATETIME.log"
+
+$SCRIPTPATH/stop
+
+node $BASEPATH/bin/restart-networking.js 2> /dev/null &
+
+mongod \
+  --dbpath /var/lib/mongodb \
+  --fork \
+  --logpath $LOGPATH_MONGO
+
+sleep 3
+
+node $BASEPATH/app/server.js >> $LOGPATH_SERVER 2>> $LOGPATH_SERVER &

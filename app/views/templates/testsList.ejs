@@ -1,0 +1,8 @@
+<ol id=testsList class="list">
+  <% _.each(tests, function(test) { %>
+  <li>
+    <a href="#tests/<%= test.id %>">
+      <%= test.program %> @ <%= test.tester %>
+    </a>
+  <% }); %>
+</ol>

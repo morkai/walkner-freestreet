@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>Dokumentacja - Urządzenie testowe HighBay LED</title>
+    <style>
+      body
+      {
+        background: #EEE;
+        margin: 0 1em;
+        color: #333;
+        font: 1em/1.4 Arial, sans-serif;
+      }
+      #container
+      {
+        padding: 1em;
+        background: #FFF;
+        box-shadow: 0 0 1em #666;
+      }
+      a
+      {
+        color: #06C;
+        text-decoration: none;
+      }
+      a:hover
+      {
+        color: #F50;
+      }
+      section
+      {
+        border-top: 1px dotted #999;
+      }
+      h1
+      {
+        font-size: 1.6em;
+      }
+      h2
+      {
+        font-size: 1.3em;
+      }
+      h3
+      {
+        font-size: 1.1em;
+      }
+      img
+      {
+        border: 0;
+      }
+      #toc
+      {
+        border-top: 0;
+      }
+      #toc h1
+      {
+        margin: 0;
+        font-size: 2em;
+      }
+      #toc ol
+      {
+        list-style-type: upper-roman;
+      }
+      #browsers
+      {
+        text-align: center;
+      }
+      .image
+      {
+        text-align: center;
+        font-size: .8em;
+        color: #666;
+        padding-left: 1em;
+      }
+      .image.righted
+      {
+        float: right;
+      }
+      .button
+      {
+        background: linear-gradient(top, #FFF, #CCC);
+        background: -moz-linear-gradient(top, #FFF, #CCC);
+        background: -o-linear-gradient(top, #FFF, #CCC);
+        background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#CCC));
+        border: 1px solid #AAA;
+        border-top-color: #CCC;
+        border-left-color: #CCC;
+        border-radius: .25em;
+        color: inherit;
+        display: inline-block;
+        line-height: 1;
+        margin: 0;
+        padding: .25em .5em;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px white;
+      }
+      .op-state-default
+      {
+        padding: 0 .25em;
+        border: 1px solid #DDD;
+      }
+      .op-state-hover
+      {
+        padding: 0 .25em;
+        border: 2px solid #F93;
+      }
+      .op-state-accept
+      {
+        padding: 0 .25em;
+        border: 2px solid #39F;
+      }
+      .op-state-valid
+      {
+        padding: 0 .25em;
+        border: 2px solid #0C6;
+      }
+      #statuses {
+        list-style: none;
+        padding-left: 1em;
+      }
+      .status {
+        background: #666;
+        background: radial-gradient(center 45deg, circle closest-side, #CCC 0%, #666 100%);
+        background: -moz-radial-gradient(center 45deg, circle closest-side, #CCC 0%, #666 100%);
+        background: -o-radial-gradient(center 45deg, circle closest-side, #CCC 0%, #666 100%);
+        background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 10, from(#CCC), to(#666));
+        border: 2px solid #333;
+        border-radius: 2em;
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        vertical-align: middle;
+      }
+      .ok {
+        background: green;
+        background: radial-gradient(center 45deg, circle closest-side, #EAF7D9 0%, green 100%);
+        background: -moz-radial-gradient(center 45deg, circle closest-side, #EAF7D9 0%, green 100%);
+        background: -o-radial-gradient(center 45deg, circle closest-side, #EAF7D9 0%, green 100%);
+        background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 10, from(#EAF7D9), to(green));
+      }
+      .warning {
+        background: orange;
+        background: radial-gradient(center 45deg, circle closest-side, #FFF5CC 0%, orange 100%);
+        background: -moz-radial-gradient(center 45deg, circle closest-side, #FFF5CC 0%, orange 100%);
+        background: -o-radial-gradient(center 45deg, circle closest-side, #FFF5CC 0%, orange 100%);
+        background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 10, from(#FFF5CC), to(orange));
+      }
+      .error {
+        background: red;
+        background: radial-gradient(center 45deg, circle closest-side, #FFD1D1 0%, red 100%);
+        background: -moz-radial-gradient(center 45deg, circle closest-side, #FFD1D1 0%, red 100%);
+        background: -o-radial-gradient(center 45deg, circle closest-side, #FFD1D1 0%, red 100%);
+        background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 10, from(#FFD1D1), to(red));
+      }
+    </style>
+  </head>
+  <body>
+    <div id=container>
+      <section id=toc>
+        <h1>Urządzenie testowe HighBay LED</h1>
+        <ol>
+          <li><a href="#intro">Wstęp</a></li>
+          <li><a href="#requirements">Wymagania</a></li>
+          <li><a href="#modules">Moduły</a></li>
+            <ol>
+              <li><a href="#modules-users">Użytkownicy</a></li>
+              <li><a href="#modules-programs">Programy</a></li>
+              <li><a href="#modules-testers">Testery</a></li>
+              <li><a href="#modules-tests">Testy</a></li>
+            </ol>
+          <li><a href="#faq">F.A.Q.</a>
+            <ol>
+              <li><a href="#faq-black-screen">Dlaczego po wejściu do aplikacji widzę tylko czarny ekran?</a>
+            </ol>
+          </li>
+          <li><a href="#hardware">Dodatek A: Informacje o sprzęcie</a></li>
+        </ol>
+      </section>
+      <section id=intro>
+        <h1>Wstęp</h1>
+        <p>Niniejszy dokument stanowi dokumentację użytkownika dla instalacji <em>Urządzenia testowego HighBay LED</em>.</p>
+        <p>
+          Uruchomienie aplikacji odbywa się poprzez wpisanie przez użytkownika adresu IP i portu
+          testera w przeglądarce internetowej. Dane te różnią się w zależności od tego, w jakiej
+          sieci znajduje się użytkownik. Dla sieci <em>ML_WLAN</em> adres to
+          <a href="0.0.0.0">http://192.168.21.44/</a>,
+          natomiast dla sieci <em>?!?XXX?!?</em> -
+          <a href="http://0.0.0.0:8080">http://161.87.64.20:8080/</a>.
+        </p>
+      </section>
+      <section id=requirements>
+        <h1>Wymagania</h1>
+        <p>
+          Do poprawnego korzystania z aplikacji wchodzącej w skład systemu,
+          użytkownik musi mieć zainstalowaną jedną z popularnych, aktualnych
+          przeglądarek internetowych.
+        </p>
+        <p id=browsers>
+          <a href="http://google.com/chrome"><img src="128-chrome.png" alt="Google Chrome" title="Pobierz Google Chrome"></a>
+          <a href="http://getfirefox.com/"><img src="128-firefox.png" alt="Firefox" title="Pobierz Firefoxa"></a>
+          <a href="http://apple.com/pl/safari/download/"><img src="128-safari.png" alt="Safari" title="Pobierz Safari"></a>
+          <a href="http://www.opera.com/download/"><img src="128-opera.png" alt="Opera" title="Pobierz Operę"></a>
+          <a href="http://windows.microsoft.com/pl-PL/internet-explorer/products/ie/home"><img src="128-ie.png" alt="Internet Explorer" title="Pobierz Internet Explorer"></a>
+        </p>
+      </section>
+      <section id=modules>
+        <h1>Moduły</h1>
+        <h2 id=modules-users>Użytkownicy</h2>
+        <p class="image righted">
+          <img src="MenuScreen.png" alt="Ekran menu administratora"><br>
+          Ekran menu administratora
+        </p>
+        <p>
+          Moduł użytkowników pozwala na wyświetlanie, modyfikację i usuwanie istniejących użytkowników
+          oraz dodawanie nowych. Dostęp do tego modułu mają jedynie użytkownicy z rolą <em>administratora</em>.
+        </p>
+        <p>
+          Każdy użytkownik posiada swój login (będący adresem e-mail) i hasło oraz ma zdefiniowaną rolę.
+          Role dzielą się na:
+        </p>
+        <ul>
+          <li>użytkownika,
+          <li>programistę,
+          <li>administratora.
+        </ul>
+        <p>
+          Domyślna rola to użytkownik. Użytkownikiem jest osoba niezalogowana oraz osoba zalogowana na konto
+          z rolą <em>użytkownika</em>. Użytkownik ma dostęp jedynie do funkcji podglądowych. Może przeglądać
+          historię testów, stany testerów oraz śledzić uruchomione na nich programy.
+        </p>
+        <p>
+          Aby uzyskać większe uprawnienia, należy zalogować się na konto z rolą <em>programisty</em>
+          lub <em>administratora</em>. W tym celu, poprzez wciśnięcie przycisku <span class="button">Zaloguj się</span>,
+          przechodzimy do ekranu logowania. Następnie wpisujemy login (adres e-mail) oraz hasło
+          i ponownie wciskamy przycisk <span class="button">Zaloguj się</span>.
+          Po udanym logowaniu zostaniemy przeniesieni do głównego menu.
+        </p>
+        <p>
+          Użytkownik z rolą programisty, po za tym co daje rola użytkownika, uzyskuje dostęp do modułu programów oraz
+          funkcji programowania testerów.
+        </p>
+        <p>
+          Użytkownik z rolą administratora, po za tym co daje rola programisty, uzyskuje dostęp do modułu użytkowników oraz
+          funkcji zarządzania testerami oraz usuwania starej historii testów.
+        </p>
+        <h2 id=modules-programs>Programy</h2>
+        <p>
+          Moduł programów pozwala na przeglądanie, modyfikację i usuwanie istniejących oraz dodawanie nowych programów.
+          Dostęp do tego modułu mają użytkownicy z rolą <em>programisty</em> lub <em>administratora</em>.
+        </p>
+        <p>
+          W celu dodania nowego programu, klikamy przycisk <span class=button>Dodaj</span> na liście programów, podajemy nazwę
+          i wciskamy przycisk <span class="button">Zapisz</span>. Dodany program powinien pojawić się na liście, jednak
+          nie ma on jeszcze żadnych operacji.
+        </p>
+        <p>
+          Operacje do programu można wybrać przechodząc do ekranu edycji danego programu.
+        </p>
+        <p class="image centered">
+          <img src="ProgramEditScreen.png" alt="Ekran edycji programu"><br>
+          Ekran edycji programu
+        </p>
+        <p>
+          Na ekranie edycji programu po lewej stronie znajduje się lista operacji, z których możemy zbudować program.
+          Budowanie programu odbywa się poprzez przeciągnięcie operacji z lewej strony na znajdujący się po stronie
+          prawej obszar programu.
+        </p>
+        <p>
+          Najeżdżając kursorem myszki na wybraną operację lub obszar programu, możemy zauważyć, iż obramowanie zmienia
+          kolor z <span class="op-state-default">szarego</span> na <span class="op-state-hover">pomarańczowy</span>.
+          Oznacza to element, z którym możemy wejść w interakcję. Naciśnięcie i przytrzymanie lewego przycisku myszki
+          na wybranym elemencie sprawi, że niektóre, inne elementy zmienią kolor obramowania na
+          <span class="op-state-accept">niebieski</span>. Oznacza to, że przeciągany element może zostać przeniesiony
+          nad wybrany element z <span class="op-state-accept">niebieskim</span> obramowaniem. Po przeniesieniu, element ten zmieni kolor
+          obramowania na <span class="op-state-valid">zielony</span>, informując o tym, że po upuszczeniu przeciąganego
+          elementu, zostanie on dodany do programu na ostatniej pozycji na liście operacji elementu, na który został upuszczony.
+          Podsumowując: elementy z <span class="op-state-hover">pomarańczowym</span> obramowaniem zostają dodawane jako
+          potomkowie elementów z <span class="op-state-valid">zielonym</span> obramowaniem.
+        </p>
+        <p>
+          Po dodaniu wybranej operacji do programu należy wypełnić pola z nią związane. Rożne operacje mają różne
+          parametry:
+        </p>
+        <ul>
+          <li>
+            <em>Powtarzaj</em> - pętla powtarzająca, podaną ilość razy <strong>lub</strong> przez określoną ilość sekund,
+            operacje w niej zawarte. Jeżeli podamy ilość sekund, to zostanie ona zamieniona automatycznie na ilość
+            iteracji pętli poprzez podzielenie danej ilości sekund przez sumę czasu trwania wszystkich operacji
+            w tej pętli. Na przykład, jeżeli podamy <code>300</code> jako ilość sekund, a jedna iteracja tej pętli
+            (suma czasów wszystkich operacji w niej zawartch) trwa <code>33</code> sekundy, to otrzymamy
+            <code>300 / 33 = 9</code> powtórzeń. Pętle można zagnieżdżać.
+          <li>
+            <em>Czekaj</em> - nic nie rób przez podaną ilość sekund. Wartość natężenia przed i po tej operacji zostaje
+            taka sama.
+          <li>
+            <em>Brzęcz</em> - włącza brzęczyk na określoną ilość sekund. Wartość natężenia przed i po tej operacji zostaje
+            taka sama.
+          <li>
+            <em>Wyłącz</em> - wyłącza lampę na określoną ilość sekund. Po ukończeniu tej operacji, wartość natężenia wraca
+            do stanu w jakim znajdowała się przed wyłączeniem.
+          <li>
+            <em>Zmień natężenie</em> - zmienia natężenie na podaną wartość w procentach. Ustawiając czas
+            na <code>0</code> sekund, zmiana wartości nastąpi natychmiast. Ustawiając czas na określoną ilość sekund,
+            wartość natężenia będzie się stopniowo zwiększać lub zmniejszać (w zależności od wartości poprzedniej) przez
+            daną ilość sekund, aż do uzyskania pożądanej wartości.
+        </ul>
+        <p>
+          Wszystkie operacje programu można usunąć klikając na <code>X</code> znajdujący się w prawym górnym rogu
+          obszaru <em>Program</em>. W celu usunięcia wybranej operacji (i wszystkich podoperacji) należy najechać
+          na nią kursorem myszki, a następnie kliknąć <code>X</code>, który pojawi się w prawym górnym rogu
+          <span class="op-state-hover">pomarańczowego</span> obszaru.
+        </p>
+        <p>
+          Po wprowadzeniu zmian do programu należy pamiętać o ich zapisaniu poprzez wciśnięcie przycisku
+          <span class="button">Zapisz</span>.
+        </p>
+        <p class="image centered">
+          <img src="ProgramDetailsScreen.png" alt="Widok programu w formie wykresu"><br>
+          Widok programu w formie wykresu
+        </p>
+        <p>
+          Na ekranie programu lub testera (jeżeli program został wybrany) możemy zobaczyć operacje programu
+          przedstawione w formie wykresu.
+        </p>
+        <p>
+          Oś x przedstawia czas programu, od początku do końca, natomiast oś y - wartość natężenia. W zależności od
+          wykonywanej w danym momecie operacji linia na wykresie ma inny kolor i jest przerywana lub nie.
+          Operacje na wykresie przedstawiane są w następujący sposób:
+        </p>
+        <ul>
+          <li>
+            <em>Powtarzaj</em> - <span style="border-bottom: 1px dashed #CCC">dwie jasnoszare, przerywane, pionowe linie</span>
+            stanowiące o początku i końcu pętli wraz z liczbą iteracji przy pierwszej linii.
+          <li>
+            <em>Czekaj</em> - <span style="border-bottom: 2px solid #666">ciągła szara, pozioma linia</span>
+            na wysokości odpowiadającej aktualnej wartości natężenia.
+          <li>
+            <em>Brzęcz</em> - <span style="border-bottom: 2px solid #C60">ciągła pomarańczowa, pozioma linia</span>
+            na wysokości odpowiadającej aktualnej wartości natężenia.
+          <li>
+            <em>Wyłącz</em> - <span style="border-bottom: 2px dashed #666">przerywana, szara, pozioma linia</span>
+            na wysokości odpowiadającej aktualnej wartości natężenia.
+          <li>
+            <em>Zmień natężenie</em> - <span style="border-bottom: 2px solid #06C">wznosząca się lub opadająca ciągła, niebieska linia</span>
+            przedstawiająca zmianę wartości natężenia w czasie.
+        </ul>
+        <h2 id=modules-testers>Testery</h2>
+        <p class="image righted">
+          <img src="TestersListScreen.png" alt="Ekran listy testerów"><br>
+          Ekran listy testerów
+        </p>
+        <p>
+          Moduł testerów pozwala zarządzanie testerami, ich programowanie oraz podgląd stanu uruchomionych na nich programów.
+          Funkcje podglądu dostępne są dla wszystkich użytkowników, funkcja programowania tylko dla użytkowników z rolą
+          <em>programisty</em>, natomiast funkcje zarządzania - tylko dla <em>administratorów</em>.
+        </p>
+        <p>
+          Lista testerów zawiera nazwy testerów wraz z ich aktualnymi statusami.
+          Stany, w jakich dany tester może się znajdować to:
+        </p>
+        <ul id=statuses>
+          <li><span class="status"></span> od uruchomienia systemu nie nawiązano połączenia z testerem
+          <li><span class="status ok"></span> połączono z testerem
+          <li><span class="status warning"></span> na testerze wykonywany jest program
+          <li><span class="status error"></span> utracono połączenie z testerem
+          <li><span id=programHalted class="status ok error"></span> program został zatrzymany
+          <li><span id=programFinished class="status ok warning"></span> program zakończył się
+        </ul>
+        <p style="clear: both;">
+          Kliknięcie nazwy przeniesie nas na ekran szczegółowy wybranego testera.
+        </p>
+        <p class="image centered">
+          <img src="TesterDetailsScreen.png" alt="Ekran testera"><br>
+          Ekran testera
+        </p>
+        <p>
+          Na ekranie testera znajdują się informacje statusie testera (kolory i ich znaczenie takie same jak na liście
+          testerów), aktualnie wybranym programie oraz, jeżeli wybrany program jest w danym momencie uruchomiony, to na
+          wykresie pojawi się czerwony okrąg wskazujący aktualną pozycję w całym teście, a nad wykresem, informacja o
+          aktualnej wartości natężenia i przybliżonym czasie ukończenia programu.
+        </p>
+        <p>
+          Jeżeli w danym momencie żaden program nie jest uruchomiony na wybranym testerze,
+          to użytkownik z rolą <em>programisty</em> może zmienić przypisany program 1 oraz program 2 klikając
+          przycisk <span class="button">Programuj</span>.
+        </p>
+        <p class="image centered">
+          <img src="TesterProgramScreen.png" alt="Ekran programowania testera"><br>
+          Ekran programowania testera
+        </p>
+        <p>
+          Kliknięcie przycisku <span class="button">Zapisz</span> załaduje listy operacji wybranych programów do testera.
+          Przypisanie to zachowane jest po wyłączeniu i ponownym włączeniu systemu. Należy uważać na sytuację, gdy przypisane
+          do testera programy zostaną zmienione (np. dodanie lub usunięcie operacji). Nowa wersja programu nie zostanie
+          automatycznie załadowana do testera. Stanie się to dopiero po ponownym uruchomieniu systemu lub po ponownym
+          zaprogramowaniu testera tymi samymi programami.
+        </p>
+        <h2 id=modules-tests>Testy</h2>
+        <p>
+          Moduł ten zawiera listę uruchomionych w przeszłości testów wraz ze szczegółowymi informacjami na ich temat.
+          Wszyscy użytkownicy mogą przeglądać testy. Użytkownicy z rolą <em>administratora</em> klikając przycisk
+          <span class="button">Wyczyść</span> mają możliwość usunięcia wszystkich testów starszych niż podana ilość dni.
+        </p>
+        <p class="image centered">
+          <img src="TestDetailsScreen.png" alt="Ekran wykonanego testu"><br>
+          Ekran wykonanego testu
+        </p>
+        <p>
+          Na ekranie testu znajdują się takie informacje jak: status (ukończony lub zatrzymany), nazwa testera, na jakim test
+          był wykonywany, nazwa programu, który był wykonywany, czas rozpoczęcia, zakończenia i trwania testu oraz podgląd
+          wykonanych operacji w formie wykresu.
+        </p>
+      </section>
+      <section id=faq>
+        <h1>F.A.Q.</h1>
+        <h2 id=faq-black-screen>Dlaczego po wejściu do aplikacji widzę tylko czarny ekran?</h2>
+        <p>
+          Dzieje się tak podczas korzystania z przeglądarki Internet Explorer.
+        </p>
+        <p>
+          Jeżeli wersja Internet Explorera, z której korzystasz jest mniejsza niż 8,
+          prosimy o <a href="http://windows.microsoft.com/pl-PL/internet-explorer/products/ie/home">jej aktualizację</a> lub <a href="#browsers">zainstalowanie alternatywnej przeglądarki</a>.
+        </p>
+        <p>
+          Jeżeli korzystasz z Internet Explorera w wersji 8 lub 9 wykonaj następujące czynności:
+        </p>
+        <ol>
+          <li>Wejdź do aplikacji, tak byś widział czarny ekran.
+          <li>Wciśnij kombinację klawiszy <kbd>ALT+T</kbd>.
+          <li>Z menu wybierz pozycję <i>Compability View settings</i>.
+          <li>Odznacz opcję <i>Display intranet sites in Compability View</i>.
+          <li>Kliknij przycisk <i>Close</i>.
+          <li>Odśwież stronę (wciśnij <kbd>F5</kbd>).
+        </ol>
+      </section>
+      <section id=hardware>
+        <h1>Informacje o sprzęcie</h1>
+        <dl>
+          <dt>Adres IP i port aplikacji w sieci <em>ML_WLAN</em>
+          <dd><code>192.168.21.44:80</code>
+          <dt>Adres IP i port aplikacji w sieci <em>?!?XXX?!?</em>
+          <dd><code>161.87.64.20:8080</code>
+        </dl>
+      </section>
+    </div>
+    <script>
+      var programHalted = document.getElementById('programHalted');
+      var programFinished = document.getElementById('programFinished');
+      var state = false;
+
+      function blink()
+      {
+        state = !state;
+        programHalted.className = 'status ok' + (state ? '' : ' error');
+        programFinished.className = 'status ok' + (state ? '' : ' warning');
+
+        setTimeout(blink, 1000);
+      }
+
+      blink();
+    </script>
+  </body>
+</html>

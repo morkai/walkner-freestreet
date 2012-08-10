@@ -1,0 +1,22 @@
+<form id=editUserForm class="form" method="post" action="/users/<%= user.id %>">
+  <fieldset>
+    <legend>Podstawowe informacje</legend>
+    <ul class="form-fields">
+      <li>
+        <label for=editUserFormName>Imię i nazwisko:</label>
+        <input id=editUserFormName name="name" type="text" value="<%= user.name %>">
+      <li>
+        <label for="editUserFormRole">Rola:</label>
+        <%= selectTag('editUserFormRole', 'role', user.role, roles) %>
+      <li>
+        <label for="editUserFormEmail">Adres e-mail:</label>
+        <input id="editUserFormEmail" name="email" type="text" value="<%= user.email %>">
+      <li>
+        <label for="editUserFormPassword1">Nowe hasło:</label>
+        <input id="editUserFormPassword1" name="password1" type="password">
+      <li>
+        <label for="editUserFormPassword2">Powtórz nowe hasło:</label>
+        <input id="editUserFormPassword2" name="password2" type="password">
+    </ul>
+  </fieldset>
+</form>
