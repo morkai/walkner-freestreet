@@ -108,9 +108,11 @@ TesterDetailsView = Backbone.View.extend({
         offset = $('#leds').outerHeight()
                + $('#programs').outerHeight()
                + $('#hd').outerHeight() + 10;
+
+    var padding = parseInt($(previewGraph).css('padding')) * 2;
     
-    previewAnim.width = previewGraph.width = me.$('#leds').width() - 4;
-    previewAnim.height = previewGraph.height = window.innerHeight - offset;
+    previewAnim.width = previewGraph.width = me.$('#leds').width() - 4 - padding;
+    previewAnim.height = previewGraph.height = window.innerHeight - offset - padding;
     
     if (me.plotTimeout)
     {

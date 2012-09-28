@@ -271,11 +271,12 @@ a {
   position: fixed;
   left: 0;
   bottom: 0;
-  border: 2px solid #333;
-  border-radius: .5em;
+  padding: 10px;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   margin: .5em;
+  outline: 2px solid #333;
 }
 #previewAnim {
   background: transparent;
@@ -407,7 +408,7 @@ a {
 }
 #programGraph {
   margin-bottom: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 /**
