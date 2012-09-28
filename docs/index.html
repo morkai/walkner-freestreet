@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset=utf-8>
-    <title>Dokumentacja - Urządzenie testowe HighBay LED</title>
+    <title>Dokumentacja - Tester FreeStreet</title>
     <style>
       body
       {
@@ -10,6 +10,7 @@
         margin: 0 1em;
         color: #333;
         font: 1em/1.4 Arial, sans-serif;
+        -webkit-print-color-adjust: exact;
       }
       #container
       {
@@ -150,12 +151,39 @@
         background: -o-radial-gradient(center 45deg, circle closest-side, #FFD1D1 0%, red 100%);
         background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 10, from(#FFD1D1), to(red));
       }
+
+      #requirements
+      {
+        page-break-after: always;
+      }
+      #modules-programs,
+      #modules-tests,
+      #modules-testers,
+      #faq,
+      #hardware
+      {
+        page-break-before: always;
+      }
+
+      @media print {
+        body {
+          margin: 0;
+          background: #FFF;
+        }
+        section {
+          border-top: 0;
+        }
+        #container {
+          padding: 0;
+          box-shadow: none;
+        }
+      }
     </style>
   </head>
   <body>
     <div id=container>
       <section id=toc>
-        <h1>Urządzenie testowe HighBay LED</h1>
+        <h1>Tester FreeStreet</h1>
         <ol>
           <li><a href="#intro">Wstęp</a></li>
           <li><a href="#requirements">Wymagania</a></li>
@@ -176,14 +204,14 @@
       </section>
       <section id=intro>
         <h1>Wstęp</h1>
-        <p>Niniejszy dokument stanowi dokumentację użytkownika dla instalacji <em>Urządzenia testowego HighBay LED</em>.</p>
+        <p>Niniejszy dokument stanowi dokumentację użytkownika dla instalacji <em>Testera FreeStreet</em>.</p>
         <p>
           Uruchomienie aplikacji odbywa się poprzez wpisanie przez użytkownika adresu IP i portu
           testera w przeglądarce internetowej. Dane te różnią się w zależności od tego, w jakiej
           sieci znajduje się użytkownik. Dla sieci <em>ML_WLAN</em> adres to
           <a href="0.0.0.0">http://192.168.21.44/</a>,
-          natomiast dla sieci <em>?!?XXX?!?</em> -
-          <a href="http://0.0.0.0:8080">http://161.87.64.20:8080/</a>.
+          natomiast dla sieci <em>domenowej</em> -
+          <a href="http://161.87.64.20:8080">http://161.87.64.20:8080/</a>.
         </p>
       </section>
       <section id=requirements>
@@ -436,7 +464,7 @@
         <dl>
           <dt>Adres IP i port aplikacji w sieci <em>ML_WLAN</em>
           <dd><code>192.168.21.44:80</code>
-          <dt>Adres IP i port aplikacji w sieci <em>?!?XXX?!?</em>
+          <dt>Adres IP i port aplikacji w sieci <em>domenowej</em>
           <dd><code>161.87.64.20:8080</code>
         </dl>
       </section>
