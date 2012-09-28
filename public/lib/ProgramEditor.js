@@ -114,7 +114,7 @@
   
   ProgramEditor.prototype.createOperationElement = function(helper)
   {
-    return helper.clone().removeClass('helper ui-draggable-dragging').css({
+    return helper.clone().removeAttr('id').removeClass('helper ui-draggable-dragging').css({
       position: 'relative',
       top: 0,
       left: 0,
