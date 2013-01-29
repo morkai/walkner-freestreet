@@ -4,19 +4,22 @@
 
 ### node.js
 
-Server-side JavaScript.
+Node.js is a server side software system designed for writing scalable
+Internet applications in JavaScript.
 
-Download: http://nodejs.org/#download
-
-Installation instructions: https://github.com/joyent/node/wiki/Installation
+  * __Version__: 0.6.x
+  * __Website__: http://nodejs.org/
+  * __Download__: http://nodejs.org/download/
+  * __Installation guide__: https://github.com/joyent/node/wiki/Installation
 
 ### MongoDB
 
-NoSQL database.
+MongoDB is a scalable, high-performance, open source NoSQL database.
 
-Download: http://www.mongodb.org/downloads
-
-Installation instructions: http://www.mongodb.org/display/DOCS/Quickstart
+  * __Version__: 2.x.x
+  * __Website__: http://mongodb.org/
+  * __Download__: http://www.mongodb.org/downloads
+  * __Installation guide__: http://www.mongodb.org/display/DOCS/Quickstart
 
 ### MODBUS TCP/IP slave
 
@@ -26,18 +29,19 @@ Download a simulator: http://www.plcsimulator.org/
 
 Clone the repository:
 
-    git clone git://github.com/morkai/walkner-freestreet.git
+```
+git clone git://github.com/morkai/walkner-freestreet.git
+```
 
 or [download](https://github.com/morkai/walkner-freestreet/zipball/master)
 and extract it.
 
-Go to the project's directory:
+Go to the project's directory and install the dependencies:
 
-    $ cd walkner-freestreet/
-
-Install the dependencies:
-
-    $ npm install
+```
+cd walkner-freestreet/
+npm install
+```
 
 ## Configuration
 
@@ -58,13 +62,22 @@ Start the application server in `development` or `production` environment:
 
   * under *nix:
 
-        $ NODE_ENV=development node walkner-freestreet/app/server.js
+    ```
+    NODE_ENV=development node walkner-freestreet/app/server.js
+    ```
 
   * under Windows:
 
-        $ SET NODE_ENV=development
-        $ node walkner-freestreet/app/server.js
+    ```
+    SET NODE_ENV=development
+    node walkner-freestreet/app/server.js
+    ```
 
 Application should be available on a port defined in `app/boot/express.js` file
 (`82` by default). Point the Internet browser to http://127.0.0.1:82/
 and log in using `walkner@walkner.pl`/`Walkner1`.
+
+## License
+
+This project is released under the
+[CC BY-NC 3.0](https://raw.github.com/morkai/walkner-isa/master/license.md).
