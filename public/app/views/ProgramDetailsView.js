@@ -98,9 +98,11 @@ ProgramDetailsView = Backbone.View.extend({
     var me = this,
         previewGraph = document.getElementById('programGraph'),
         offset = $('#hd').outerHeight() + $('#programDetailsFormats').outerHeight() + 10;
-    
-    previewGraph.width = window.innerWidth - 27;
-    previewGraph.height = window.innerHeight - offset;
+
+    var padding = parseInt($(previewGraph).css('padding')) * 2;
+
+    previewGraph.width = window.innerWidth - 27 - padding;
+    previewGraph.height = window.innerHeight - offset - padding;
     
     if (me.plotTimeout)
     {
