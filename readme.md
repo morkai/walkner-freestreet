@@ -80,4 +80,4 @@ and log in using `walkner@walkner.pl`/`Walkner1`.
 ## License
 
 This project is released under the
-[CC BY-NC 3.0](https://raw.github.com/morkai/walkner-freestreet/master/license.md).
+[NPOSL-3.0](https://raw.github.com/morkai/walkner-freestreet/master/license.md).
