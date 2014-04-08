@@ -79,5 +79,6 @@ and log in using `walkner@walkner.pl`/`Walkner1`.
 
 ## License
 
-This project is released under the
-[NPOSL-3.0](https://raw.github.com/morkai/walkner-freestreet/master/license.md).
+walkner-freestreet is released under the [CC BY-NC-SA 4.0 License](https://github.com/morkai/walkner-freestreet/blob/master/license.md).
+
+Copyright (c) 2014, Łukasz Walukiewicz <lukasz@walukiewicz.eu>. Some Rights Reserved.
